@@ -1,27 +1,33 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>akhat</title>
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <center>
-      <h1>Price: $<span id="price">0</span></h1>
-      <h2>Rent a car</h2>
+    <div class="conteiner">
+      
+      <h2 class="H2">Pizza Order</h2>
       <form>
-        <label for="carSelect">chose the type of car</label>
+        <label class="chose" for="pizzaSelect">chose the type of car</label>
         <br />
-        <select id="carSelect" onchange="getPrice()">
-          <option value="bmw">BMW</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="chevrolet">Chevrolate</option>
-          <option value="kia">Kia</option>
-          <option value="byd">BYD</option>
-          <option value="ferrari">Ferrari</option>
-        </select>
+        
+        <select id="pizzaSelect" onchange="getPrice()">
+          <option>none</option>
+          <option value="peperoni">peperoni</option>
+          <option value="classic">classic</option>
+          <option value="blueberry">with barryies</option>
+        </select><br><br>
+        <label for="size_medium">
+          <input type="checkbox" id="size_medium" onchange="getPrice()" />
+          25sm - 20$ </label><br><br>
+          <label for="size_thick">
+            <input type="checkbox" id="size_thick" onchange="getPrice()" />
+            30sm - 30$ </label>
         <br /><br />
         <input
           type="number"
@@ -32,41 +38,42 @@
           min="1"
           onchange="getPrice()"
         /><br /><br />
-        <label for="tonirovka">
-          <input type="checkbox" id="tonirovka" onchange="getPrice()" />
-          Tonirovka $10 </label
+        <label for="tomato">
+          <input type="checkbox" id="tomato" onchange="getPrice()" />
+          Tomato $10 </label
         ><br /><br />
-        <label for="register">
-          <input type="checkbox" id="register" onchange="getPrice()" />
-          Registrator $5 </label
+        <label for="chili">
+          <input type="checkbox" id="chili" onchange="getPrice()" />
+          Chili $5 </label
         ><br /><br />
-        <label for="auto">
+        <label for="with">
           <input
             type="radio"
-            id="auto"
-            name="transfer"
-            value="auto"
+            id="with"
+            name="question"
+            value="with"
             checked
             onchange="getPrice()"
           />
-          Auto box </label
+          With </label
         ><br />
-        <label for="mechanic">
+        <label for="without">
           <input
             type="radio"
-            id="mechanic"
-            name="transfer"
+            id="without"
+            name="question"
             value="mech"
             onchange="getPrice()"
           />
-          Mechanic box
+          Without
         </label>
-        <br>
-        <br>
-        <button id="btn">Get rpice</button>
+        <br />
+        <br />
+        <button >get order</button>
       </form>
-    </center>
+      <h1 class="H1">OverAll: $<span id="price">0</span></h1>
+    </div>
 
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

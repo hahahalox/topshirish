@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@700&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.conteiner {
+  max-width: max-content;
+  padding: 40px;
+  margin: 0 auto;
+  background: #adadad;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.H1{
+font-family: "Poppins";
+font-weight: 500;
+}
+.H2{
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 50px;
+}
+.chose{
+  font-size: 30px;
+  font-family: "Poppins";
+}

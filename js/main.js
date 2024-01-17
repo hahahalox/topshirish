@@ -1,27 +1,16 @@
-const carPrices = {
-  bmw: {
-    auto: 100,
-    mech: 80,
+const pizzaPrices = {
+  peperoni: {
+    with: 45,
+    without: 40,
   },
-  mercedes: {
-    auto: 150,
-    mech: 120,
+  classic: {
+    with: 50,
+    without: 30,
   },
-  byd: {
-    auto: 190,
-    mech: 170,
-  },
-  kia: {
-    auto: 200,
-    mech: 190,
-  },
-  ferrari: {
-    auto: 300,
-    mech: 280,
-  },
-  chevrolet: {
-    auto: 130,
-    mech: 110,
+
+  blueberry: {
+    with: 70,
+    without:65 ,
   },
 };
 
@@ -29,25 +18,32 @@ const priceEl = document.querySelector("#price");
 
 function getPrice() {
   let price = 0;
-  const brandSelect = document.getElementById("carSelect");
-  const transferTypeEls = document.getElementsByName("transfer");
+  const TypeSelect = document.getElementById("pizzaSelect");
+  const withTypeEls = document.getElementsByName("question");
 
-  const transferType = transferTypeEls[0].checked
-    ? transferTypeEls[0].value
-    : transferTypeEls[1].value;
+  const withType = withTypeEls[0].checked
+    ? withTypeEls[0].value
+    : withTypeEls[1].value;
 
-  const hasTonirovkaPrice = document.getElementById("tonirovka").checked
+  const hasTomatoPrice = document.getElementById("tomato").checked
     ? 10
     : 0;
+    const size_mediumPrice = document.getElementById("size_thick").checked
+    ? 25
+    : 0;
+    const size_thickPrice = document.getElementById("size_medium").checked
+    ? 30
+    : 0;
 
-  const hasRegisterPrice = document.getElementById("register").checked ? 5 : 0;
+  const hasChiliPrice = document.getElementById("chili").checked ? 5 : 0;
   const daysPrice =
     +document.getElementById("days").value *
-    carPrices[brandSelect.value][transferType];
+    pizzaPrices[TypeSelect.value][withType];
 
-   price+= daysPrice + hasTonirovkaPrice + hasRegisterPrice;
+   price+= daysPrice + hasTomatoPrice + hasChiliPrice + size_mediumPrice + size_thickPrice;
 
   priceEl.innerHTML = price;
 }
 
 getPrice();
+
