@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>akhat</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+
+  <body>
+    <center>
+      <h1>Price: $<span id="price">0</span></h1>
+      <h2>Rent a car</h2>
+      <form>
+        <label for="carSelect">chose the type of car</label>
+        <br />
+        <select id="carSelect" onchange="getPrice()">
+          <option value="bmw">BMW</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="chevrolet">Chevrolate</option>
+          <option value="kia">Kia</option>
+          <option value="byd">BYD</option>
+          <option value="ferrari">Ferrari</option>
+        </select>
+        <br /><br />
+        <input
+          type="number"
+          id="days"
+          placeholder="Days"
+          value="1"
+          max="10"
+          min="1"
+          onchange="getPrice()"
+        /><br /><br />
+        <label for="tonirovka">
+          <input type="checkbox" id="tonirovka" onchange="getPrice()" />
+          Tonirovka $10 </label
+        ><br /><br />
+        <label for="register">
+          <input type="checkbox" id="register" onchange="getPrice()" />
+          Registrator $5 </label
+        ><br /><br />
+        <label for="auto">
+          <input
+            type="radio"
+            id="auto"
+            name="transfer"
+            value="auto"
+            checked
+            onchange="getPrice()"
+          />
+          Auto box </label
+        ><br />
+        <label for="mechanic">
+          <input
+            type="radio"
+            id="mechanic"
+            name="transfer"
+            value="mech"
+            onchange="getPrice()"
+          />
+          Mechanic box
+        </label>
+        <br>
+        <br>
+        <button id="btn">Get rpice</button>
+      </form>
+    </center>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
